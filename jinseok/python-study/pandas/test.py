@@ -9,9 +9,9 @@ import pandas as pd
 # 인덱스 컬럼 '관서명'
 # 인코딩 'euc-kr'
 
-df2015 = pd.read_csv('jinseok/python-study/pandas/data/2015.csv', encoding = 'euc-kr', index_col = '관서명')
-df2016 = pd.read_csv('jinseok/python-study/pandas/data/2016.csv', encoding = 'euc-kr', index_col = '관서명')
-df2017 = pd.read_csv('jinseok/python-study/pandas/data/2017.csv', encoding = 'euc-kr', index_col = '관서명')
+df2015 = pd.read_csv('jinseok/python-study/data/2015.csv', encoding = 'euc-kr', index_col = '관서명')
+df2016 = pd.read_csv('jinseok/python-study/data/2016.csv', encoding = 'euc-kr', index_col = '관서명')
+df2017 = pd.read_csv('jinseok/python-study/data/2017.csv', encoding = 'euc-kr', index_col = '관서명')
 
 
 # %%
