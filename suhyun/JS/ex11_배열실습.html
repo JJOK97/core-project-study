@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table border="1px solid black">
+        <tr>
+            <td>자바</td>
+            <td>안드로이드</td>
+            <td>총합</td>
+            <td>평균</td>
+        </tr>
+
+    </table>
+
+
+    <script>
+
+        document.write("<h1>?</h1>");
+        document.write("<h1>");
+        document.write("요고요고");
+        document.write("</h2>");
+
+        let num = Number(prompt('과목 수를 입력해주세요'));
+
+        //과목 수 배열
+        let sub = [];
+        //과목점수 배열
+        let score = [];
+
+        for (let i = 0; i < num; i++) {
+            sub.push(prompt('과목명을 입력해주세요'));
+            score.push(Number(prompt(sub[i] + "의 점수를 입력해주세요.")));
+
+        }
+
+        console.log(sub);
+        console.log(score);
+
+
+        let resultHTML = "";
+
+        resultHTML += '<table border = "1px solid black"><tr>'
+
+
+        for (let i = 0; i < sub.length; i++) {
+            resultHTML += "<td>";
+            resultHTML += sub[i];
+            resultHTML += "</td>";
+        }
+
+        resultHTML += "<td>총합</td><td>평균</td>"
+
+        resultHTML += "</tr><tr>";
+        
+            let sum = 0;
+            let count = 0;
+
+        for (let i = 0; i < sub.length; i++) {
+            resultHTML += "<td>";
+            resultHTML += score[i];
+            resultHTML += "</td>";
+            sum += score[i];
+            count++;
+        }
+
+        //총합, 평균 쓰는 위치
+        resultHTML += "<td>";
+        resultHTML += sum;
+        resultHTML += "</td><td>";
+        resultHTML += sum / count;
+        resultHTML += "</td>";
+
+
+        resultHTML += "</tr></table>";
+
+
+
+        console.log(resultHTML);
+        
+        resultHTML += "</table>";
+        document.write(resultHTML); 
+
+
+
+
+    </script>
+</body>
+
+</html>
