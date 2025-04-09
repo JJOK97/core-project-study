@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+      [실습] 1~100까지 5개의 랜덤숫자를 배열에 저장 후 가장 큰 수의 결과값 출력 
+
+      let array = [];
+      let sub = [];
+
+      for (let i = 0; i<Cnt; i++){
+        array += "★".repeat(i) "<br>";
+      }
+      document.writeln(array);
+        
+        array[i] = Math.floor(Math.random() * 100) +1;  
+
+        sub.push(prompt("결과값은>> ", array))
+
+       // 2. 5개 랜덤수를 배열에 저장
+      console.log(array);
+
+       // 가장 큰 수 저장하는 변수 정의
+
+      let max = array[0];
+
+      for (let i = 0; i <array.length-1; i++) {
+        // 3. 배열 내 데이터끼리 비교, 가장 큰수를 1번 변수에 저장
+
+        if(array[i]>max){
+          max = array[i];
+        }
+        // 4. 결과값 출력
+        console.log(`${[array]} 중에 가장 큰 수는${max}입니다.`);
+      }
+
+    </script>
+</body>
+</html>
