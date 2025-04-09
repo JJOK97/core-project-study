@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div>div{
+            width: 100px;   
+            height: 100px;
+            background-color: aqua;
+            border: 1px solid black;
+                }
+
+        /* position 속성 
+            : 요소가 배치되는 방식을 정할 수 있음
+            : static, relative,
+              absolute, fixed 
+         */
+         #static{
+            /* static : position 기본값, 위치속성 비활성화(임의 이동 불가 )
+                        작성된 순서대로 차례차레 배치
+            */
+            position: static; 
+             
+         }
+
+         #relative{
+            /*relative : 위치속성 활성화
+                         본인 원래 위치 기준에서 이동  
+             */
+            position: relative;
+            top: 30px;
+            left: 50px;
+         }
+
+         #absolute{
+            /* absolute : 위치속성 활성화, 
+                          기준 position이 static이 아닌 부모.
+                          부모가 static일 때는 body 태그 기준으로 함.
+                          현재는 patents가 부모라서 parents 기준으로 함.
+             */
+            position: absolute;
+            top: 30px;
+         }
+
+         #fixed{
+            /* fixed : 회면 상에서 특정 좌표에 고정 */
+            position: fixed;
+            top: 50px;
+            left: 50px;
+         }
+
+
+    </style>
+
+</head>
+
+<body>
+    <span>body 태그 안쪽</span>
+    <div id="parents">
+        <span>parent 안쪽</span>
+        <div id="static">static</div>
+        <div id="relative">relative</div>
+        <div id="absolute">absolute</div>
+        <div id="fixed">fixed</div>
+    </div>
+</body>
+</html>

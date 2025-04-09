@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <script>
+        let age = prompt('나이?') //prompt는 무조건 문자열
+        //문자열 -> 숫자 변환
+        console.log("변환 전 ", age);
+
+        console.log("변환 후 ", Number(age)); //parseInt는 3.14 이렇게 되어있는 걸 3으로 바꾼다. 
+        //parseInt(), parseFloat() 사용가능   
+        // -> 자료형은 전부 다 number!!!
+
+        let num = 3.14;
+        console.log("변환 전",num);
+        console.log("변환 후",parseInt(num)); //3으로 출력
+        console.log("변환 후",parseInt(num)); //바꿀 수 없는 걸 바꾸면 Not a number(NaN)
+
+        //숫자-->문자
+        //toString() 
+        let num1 = 3.14;
+        let str1 = num1.toString();
+
+        
+
+        
+        
+         
+    </script>    
+</body>
+</html>
