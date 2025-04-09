@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      background-color: pink;
+      height : 100px;
+      display: flex;
+
+    }
+
+    .container > div{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
+
+    }
+
+    .item1, .item3{
+      flex-basis: 15%;
+    }
+
+    .item2{
+      flex-basis: 70%;
+    }
+
+    img{
+      width: 50%;
+    }
+
+    a{
+      margin: 10px;
+      text-decoration: none;
+      color: black;
+      font-size: large;
+      font-weight: bold;
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="item1">
+      <img src="https://blog.kakaocdn.net/dn/emIKTg/btrnXZSFtu4/UZgrmgFTVo5NHY6tJFeO10/img.png" alt="">
+    </div>
+    <div class="item2">
+      <a href="#">게시판</a>
+      <a href="#">소식</a>
+      <a href="#">문의하기</a>
+    </div>
+    <div class="item3">
+      <a href="#">로그인</a>
+      <a href="#">회원가입 </a>
+    </div>
+  </div>
+
+</body>
+
+</html>

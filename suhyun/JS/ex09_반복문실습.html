@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <script>
+        //랜덤수 생성
+        //0~1 사이의 숫자를 소수점 형태로 되돌려주는 기능
+        let num = Math.random();
+        console.log();
+        //1~100 사이의 점수를 받고 싶다면
+        let num2 = parseInt(Math.random()*100+1);
+
+
+        //1. 1~10까지의 랜덤한 값을 만들고 사용자에게 랜덤수를 맞추게 하기
+        alert('랜덤 수 맞추기 시작')
+        let answer = parseInt(Math.random()*10+1);
+        console.log(answer);
+
+        //2. 틀렸다면 정답보다 작은지 큰지
+         while(true){
+           let input = Number(prompt('숫자를 입력해주세요'));
+           if(input > answer ){
+            alert('더 작은 수입니다');
+           }
+           else if(input < answer ){
+            alert('더 큰 수입니다');
+           }else{
+            alert('정답입니다!');
+            break;
+           }
+         }
+
+        //3. 틀렸다면, 작은지 큰지 안내
+        //4. 정답 맞추면 정답입니다! 하고 종료
+
+        
+        // }
+
+        //  if (answer > input){
+
+        //  }
+
+
+    </script>
+
+</body>
+</html>

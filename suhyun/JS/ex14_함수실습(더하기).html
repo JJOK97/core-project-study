@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 두 정수를 입력받은 후 합을 반환하는 addnumber()
+        //1. 함수 선언문
+        //2. 함수표현식
+        //3. 화살표함수
+
+        let num1 = Number(prompt('숫자 1 입력'))
+        let num2 = Number(prompt('숫자 2 입력'))
+
+
+        //1. 함수 선언문 
+        function addNumber(a, b) {
+            console.log(a, "와", b, "의 합", a + b);
+        }
+        addNumber(num1, num2);
+
+        //2 .함수표현식
+
+        let addNumber2 = function (a, b) {
+            console.log(a, "와", b, "의 합", a + b);
+        }
+        addNumber2(num1, num2);
+
+
+        //3. 화살표 함수
+        let addNumber3 = (a, b) => {
+            console.log(a, "와", b, "의 합", a + b);
+        }
+        addNumber3(num1, num2);
+
+ 
+
+
+
+    </script>
+</body>
+
+</html>
