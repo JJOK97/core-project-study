@@ -1,0 +1,88 @@
+package Model;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.Random;
+
+public class Member_DAO {
+	Random random = new Random(2);
+	LocalDate date = LocalDate.now();
+	Connection conn = null; // DB 연결
+	PreparedStatement prst = null; // sql 구문 세팅/ 실행
+	int result = 0; // return되는 int 형태의 결과 저장
+	ResultSet rs = null; // return되는 테이블 형태의 결과를 저장
+
+	public void getConn() {
+		try {// DB드라이버 로드
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			// DB연결에 필요한 설정값
+			String url = "jdbc:oracle:thin:@project-db-campus.smhrd.com:1523:xe";
+			String user = "hapjeong_24SW_DS_p1_4";
+			String passward = "smhrd4";
+			conn = DriverManager.getConnection(url, user, passward);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void close() {// 객체 반납 메소드
+		try {
+			if (prst != null) {
+				prst.close();
+			}
+			if (conn != null) {
+				conn.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public int join(MemberDTO dto) { // 회원가입 쿼리 메소드
+		// DB접근
+		getConn();
+		// DB쿼리문실행
+		String sql = "insert into member VALUES (?,?)";
+		try {
+			prst = conn.prepareStatement(sql);
+			prst.setString(1, dto.getNick());
+			prst.setString(2, dto.getPw());
+			result = prst.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return result;
+	}
+	
+	public int save(MemberDTO dto) {
+		try {
+			String sql = "";
+			prst = conn.prepareStatement(sql);
+			
+		}
+	}
+	public int gamestart(MemberDTO dto) {
+		try {
+			String sql = "";
+			prst = conn.prepareStatement(sql);
+			
+		}
+	}
+	public int punch(MemberDTO dto) {
+		try {
+			
+		}
+	}
+	public int Dodge(MemberDTO dto) {
+		try {
+			
+		}
+	}
+}

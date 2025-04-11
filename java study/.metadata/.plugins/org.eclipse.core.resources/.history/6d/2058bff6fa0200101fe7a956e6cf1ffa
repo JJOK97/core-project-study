@@ -1,0 +1,44 @@
+package Model;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class MemberDAO {
+	// [DAO]
+	// > Database Access Object 데이터베이스에 접근하기 위한 객체
+	
+	Connection conn = null;
+	PreparedStatement prst = null;
+	
+	public void getConn() { // DB에 접속 메소드
+		try {// DB드라이버 로드
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		// DB연결에 필요한 설정값
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user = "hr";
+		String passward = "hr";
+		conn = DriverManager.getConnection(url, user, passward);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public int join(MemberDTO dto) { // 회원가입 쿼리 메소드
+		// DB접근
+		getConn();
+		// DB쿼리문실행
+		String sql = "insert into DATADESIGNMEMBER VALUES (?,?,?,?)";
+		try {
+			prst = conn.prepareStatement(sql);
+			prst.setString(1, dto.getId());
+			prst.setString(2, dto.getPw());
+			prst.setString(3, dto.getName());
+			prst.setInt(4, dto.getAge());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

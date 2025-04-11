@@ -1,0 +1,14 @@
+package Model;
+
+import java.time.LocalDate;
+
+public class Member_DTO {
+	
+	private String nickname;
+	private String pw;
+	private int score;
+	private LocalDate date;
+	private int hp;
+	private int mp;
+	
+}

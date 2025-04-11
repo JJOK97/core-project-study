@@ -1,0 +1,29 @@
+package Controller;
+
+import Model.MemberDAO;
+
+public class Controller {
+	int result = 0;
+	MemberDAO dao = new MemberDAO();
+	// 경비원과 결투를 벌인다
+	public int Con_fight() { // 결투를 시작한다
+		System.out.println("야생의 경비원이 나타났다");
+		
+		
+		
+		return result;
+	}
+	
+	public int Con_punch(int enemyhp) { //공격한다
+		
+		
+		return result;
+	}
+	
+	public int Con_dodge(int playerhp) { //회피한다
+		
+		
+		return result;
+	}
+		
+}

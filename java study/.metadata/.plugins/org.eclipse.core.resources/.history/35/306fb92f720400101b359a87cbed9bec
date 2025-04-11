@@ -1,0 +1,16 @@
+package Controller;
+
+public class Controller {
+	int result = 0;
+	// 경비원과 결투를 벌인다
+	public int Con_fight() { // 결투를 시작한다
+		
+		
+		
+		
+		return result;
+	}
+	
+	public int Con_dodge() { // 회피한다
+		
+}

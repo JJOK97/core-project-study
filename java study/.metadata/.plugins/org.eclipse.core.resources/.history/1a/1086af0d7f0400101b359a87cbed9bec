@@ -1,0 +1,46 @@
+package View;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class 결투아키타입 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		Random random = new Random();
+		int count =0;
+		int playerhp = 80;
+		int enemyhp = 80;
+		System.out.println("야생의 경비원이 나타났다");
+		while (true) {
+			int com_choice = random.nextInt(2)+1;
+			System.out.println(count+"번째 턴입니다.");
+			System.out.println("경비원의 공격! 공격을 회피하세요!\n [1] 왼쪽 [2] 오른쪽");
+			int choice = sc.nextInt();
+			if (com_choice==1) {
+				System.out.println("경비원의 공격을 피했습니다");
+			}
+			if (com_choice==2) {
+				System.out.println("경비원의 공격을 피하지 못했습니다.");
+				playerhp-=10;
+			}
+			System.out.println("당신의 공격! 어느쪽으로 공격하시겠습니까? /n [1] 왼쪽 [2] 오른쪽");
+			int choice = sc.nextInt();
+			if (com_choice==1) {
+				System.out.println("공격이 적중했습니다! '경비원' hp - 10");
+				enemyhp -= 10;
+			}
+			if (com_choice==2) {
+				System.out.println("경비원이 공격을 피했습니다");
+			}
+			if (playerhp<=0 || enemyhp<=0) {
+				break;
+			}
+			
+			count++;
+		}
+		
+	}
+
+}
