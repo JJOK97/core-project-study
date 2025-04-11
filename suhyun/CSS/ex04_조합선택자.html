@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 조합선택자 */
+        /* 그룹 선택자, 계층선택자,  
+        반응 선택자 */
+  
+        /* (1)그룹 선택자
+            선택자를 ,로 구분해가며 여러 개 적기 가능 
+
+            (2)계층 선택자
+            1. 자손 선택자 : 공백 
+            2. 자식 선택자 : >
+            3. 인접형제(근접후행) 선택자 : +
+            4. 일반형제 선택자 : ~
+
+      
+        */
+
+        body p{
+            color: red;
+        }
+        
+        ul > li{
+            color: blueviolet;
+        }
+
+        li + li{  /* li + li에 해당하는 모든 애들 표시됨 */
+            background-color: chartreuse;
+        }
+
+        .one + li{  /* li + li에 해당하는 모든 애들 표시됨 */
+            background-color: chartreuse;
+        }
+
+        P + P{ /*1번 인접동생은 li고 5번 동생인 6번만 표시됨*/
+            background-color: aqua;
+        }
+
+        p + *{
+            background-color: cornflowerblue;
+        }
+
+        p ~ p{
+            font-family: '궁서체';
+        }
+
+        .one ~ li{
+            font-family: '휴먼매직체';
+        }
+
+            /*            
+            (3) 반응선택자 
+            - 선택자 : hover  => 요소에 마우스를 올리고 있는 동안만
+            - 선택자 : active => 요소를 클릭하고 있는 동안
+             */
+
+             h1:hover{
+                color: palevioletred;
+             }
+
+             h1:active{
+                background-color: blue;
+             }
+             /*  CSS 명시도 */
+             /* * = 0,
+                태그 = 1,
+                class = 10,
+                id = 100
+                조합 선택자 = 사용된 선택자 일일히 덧셈 계산
+                ex) .table > apple = 클래스 + 태그  = 11 
+              */
+
+              /* 명시도 계산하기 힘든 경우 치트키
+              
+              */
+              only 
+
+
+               /* important 키워드 
+                명시도 -10000정도로 높임 
+              */
+
+             /* block :  */
+
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>건강하게 살기!</h1>
+    <p>1번</p>
+    <ul>
+      <li class="one">2번</li>
+      <li>3번</li>
+      <li>4번</li>
+      <p>??</p>
+    </ul>
+    <p>5번</p>
+    <p>6번</p>
+
+    
+    
+</body>
+</html>

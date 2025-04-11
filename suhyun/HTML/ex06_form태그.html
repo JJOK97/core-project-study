@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- form태그 : 입력폼 만들 때 사용하는 태그
+        action 속성 : form 안에서 입력한 데이터의 전달위치 지정
+        GET , POST 방식   -->
+    <form action="#" method="get">
+
+        <!-- input type="text" 데이터를 입력할 수 있는 태그
+        type 속성에 따라서 다양한 것을 입력받을 수가 있음
+            ==> password, submit, reset
+
+
+        input 추가 속성 : name (input 태그끼리의 구분값)
+                         maxlength : 글자 수 제한
+                         placeholder : 미리보기 텍스트 
+                         
+        checkbox 속성 : 여러 가지 옵션을 선택할 수 있음
+        radio 속성 : 여러 가지 옵션 중 하나만 선택할 수 있음
+        각각의 선택지는 동일한 질문끼리 같은 name 속성으로 묶고, 각 선택지를 구분하기 위해서 value(백엔드에 보낼 거) 속성값을 설정                  -->
+
+        <span>ID</span>
+        <input type="text" name="id" maxlength="5" placeholder="id를 입력하세요">
+        <br>
+        <span>PW</span>
+        <input type="password" name="pw">
+        <br>
+
+        <input type="color" name="pw">
+        <input type="file" name="pw">
+        <input type="date" name="pw">
+        <br>
+
+        <span>밥</span>
+        <input type="checkbox" name="eat" value="rice">
+        <span>빵</span>
+        <input type="checkbox" name="eat" value="bread">
+        <span>면</span>
+        <input type="checkbox" name="eat" value="noodle">
+        <br>
+
+        <!--radio는 value를 써줘야 함  -->
+        <span>남자</span>
+        <input type="radio" name="gender" value="man">
+        <span>여자</span>
+        <input type="radio" name="gender" value="woman">
+        <br>
+
+        <span>안경쓰는 사람</span>
+        <input type="radio" name="glasses" value="on">
+        <span>안경 안 쓰는 사람</span>
+        <input type="radio" name="glasses" value="off">
+
+
+        <!-- select 태그 
+             - 목록 상자를 만드는 역할
+             - 목록 상자 안의 각각의 선택지는 option 태그를 사용
+              -->
+              <select name="home">
+                  <option value="">거주지 </option>
+                  <option value="seoul">서울 </option>
+                  <option value="gyeongi">경기 </option>
+                  <option value="ETC">그 외 </option>
+                  
+                  <input type="submit">
+                  <input type="reset">
+                </select>
+
+    </form>
+
+
+</body>
+
+</html>
