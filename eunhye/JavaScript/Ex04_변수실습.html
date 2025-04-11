@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //[실습]
+        //사용자에게 정보 입력받는 실습
+
+        //   사용자에게 직접 키보드 입력값을 받음
+        //   사용자의 입력값을 string 형태로 리턴
+        // console.log(prompt("이름을 입력해주세요."));
+        // console.log(prompt("좋아하는 과일을 입력해주세요."));
+        let name =  prompt("이름?");
+        let fruits =  prompt("과일?");
+        
+        // 3. 최종 값을 console에 출력
+        console.log("이름은", name, "이고, 과일은", fruits, 1);
+        console.log("이름은" + name + "이고, 과일은" + fruits + 1);
+        // + 복잡할 때는 템플릿d 연산자 사용
+        // 백틱`` 사용, 변수를 넣을 때는 ${변수명}
+        console.log(`이름 ${name} 과일 ${fruits}`)
+        
+    </script>
+
+</body>
+</html>
