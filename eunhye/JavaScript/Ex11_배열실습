@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>과목 점수 표</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px 16px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+   // 1. 과목 수 입력
+    let num = Number(prompt("과목 수를 입력하세요!"));
+    let sub = []; //과목 변수 및 배열 선언
+    let score = []; // 점수 변수 및 배열 선언
+
+  // 2. 과목명 & 점수 입력
+    for (let i=0; i <num; i++){
+      sub.push(prompt(`과목${i+1} 이름 입력: `));
+      }
+    for (let i=0; i < num; i++){
+      score.push(Number(prompt(`${sub[i]} 점수 입력: `)));
+      }
+  // 3. 총합&평균 계산
+    let total = 0;
+    for (let i =0; i < score.length; i++) {
+      total += score[i];
+    }
+    let avg = (total/ score.length).toFixed(2) // 소수점 2자리
+
+  // 4. 결과 테이블 생성
+    let html = "<h2>과목 점수표</h2><table><tr>";
+    for (let i = 0; i < sub.length; i++){
+    }
+      html += `<td>${total}</td><td>${avg}</td></tr><table>`;
+ 
+  // 5. 출력
+      document.write(html);
+  </script>
+
+</body>
+</html>
