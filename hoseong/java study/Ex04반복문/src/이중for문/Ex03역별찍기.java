@@ -20,7 +20,6 @@ public class Ex03역별찍기 {
 				System.out.print("*");
 			}
 			System.out.println();
-			
 		}
 		
 //		정방향 별 찍기
