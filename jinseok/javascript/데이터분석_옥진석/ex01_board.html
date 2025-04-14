@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Document</title>
+        <style>
+            tr {
+                background-color: whitesmoke;
+                height: 35px;
+            }
+
+            table {
+                max-width: 400px;
+            }
+
+            table tbody {
+                max-width: 400px;
+            }
+
+            .title {
+                background-color: gray;
+                height: 50px;
+            }
+
+            .title > th {
+                text-align: left;
+            }
+
+            tr > td:nth-child(1) {
+                width: 200px;
+                text-align: right;
+            }
+
+            #colorDropdown {
+                width: 80px;
+                height: 20px;
+                background-color: white;
+                border: 1px solid;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #selectedColor {
+                width: 80%;
+                height: 10px;
+                border: 1px solid #333;
+            }
+
+            #colorList {
+                display: none;
+                position: absolute;
+                width: 80px;
+                margin-top: 5rem;
+                padding: 0;
+                list-style: none;
+                border: 1px solid #333;
+                background-color: #fff;
+            }
+
+            #colorList li {
+                height: 15px;
+                line-height: 20px;
+                text-align: center;
+            }
+
+            #colorDropdown.open #colorList {
+                display: block;
+            }
+
+            #button-area {
+                width: 400px;
+                display: flex;
+                justify-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="#">
+            <table>
+                <tr class="title">
+                    <th colspan="2">Step.1 아이디/비밀번호 입력</th>
+                </tr>
+                <tr>
+                    <td>아이디 :</td>
+                    <td>
+                        <input
+                            type="text"
+                            name="ID"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호 :</td>
+                    <td>
+                        <input
+                            type="password"
+                            name="PW"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호 확인 :</td>
+                    <td>
+                        <input
+                            type="text"
+                            name="PW"
+                        />
+                    </td>
+                </tr>
+                <tr class="title">
+                    <th colspan="2">Step2. 개인정보</th>
+                </tr>
+                <tr>
+                    <td>성별 :</td>
+                    <td>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="man"
+                        />
+                        <span>남</span>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="woman"
+                        />
+                        <span>여</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>혈액형 :</td>
+                    <td>
+                        <select>
+                            <option value="A">A형</option>
+                            <option value="B">B형</option>
+                            <option value="O">O형</option>
+                            <option value="AB">AB형</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>생일 :</td>
+                    <td>
+                        <input type="date" />
+                    </td>
+                </tr>
+                <tr class="title">
+                    <th colspan="2">Step3. 선호도</th>
+                </tr>
+                <tr>
+                    <td>취미 :</td>
+                    <td>
+                        <span>축구</span
+                        ><input
+                            type="checkbox"
+                            name="hobby"
+                            value="soccor"
+                        />
+                        <span>야구</span
+                        ><input
+                            type="checkbox"
+                            name="hobby"
+                            value="baseball"
+                        />
+                        <span>농구</span
+                        ><input
+                            type="checkbox"
+                            name="hobby"
+                            value="basketball"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td>좋아하는 색깔 :</td>
+                    <td>
+                        <div id="colorDropdown">
+                            <div
+                                id="selectedColor"
+                                style="background-color: black"
+                            ></div>
+
+                            <ul id="colorList">
+                                <li
+                                    data-color="#000"
+                                    style="background-color: #000"
+                                ></li>
+                                <li
+                                    data-color="#f00"
+                                    style="background-color: #f00"
+                                ></li>
+                                <li
+                                    data-color="#00f"
+                                    style="background-color: #00f"
+                                ></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="title">
+                    <th colspan="2">Step4. 적고 싶은 말</th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <textarea
+                            name="message"
+                            cols="60"
+                            rows="5"
+                            style="width: 400px"
+                        >
+                        </textarea>
+                    </td>
+                </tr>
+            </table>
+            <div id="button-area">
+                <button id="btn">제출</button>
+                <button id="clear">초기화</button>
+            </div>
+        </form>
+
+        <script>
+            const buttons = document.querySelectorAll('button');
+            const submitBtn = buttons[0];
+            const resetBtn = buttons[1];
+
+            resetBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                const form = document.querySelector('form');
+
+                // 기존 초기화 코드
+                form.querySelectorAll('input').forEach((input) => {
+                    if (input.type === 'text' || input.type === 'password') {
+                        input.value = '';
+                    } else if (input.type === 'radio' || input.type === 'checkbox') {
+                        input.checked = false;
+                    }
+                });
+
+                form.querySelectorAll('select').forEach((select) => {
+                    select.selectedIndex = 0;
+                });
+
+                form.querySelectorAll('textarea').forEach((textarea) => {
+                    textarea.value = '';
+                });
+
+                const selectedColor = document.getElementById('selectedColor');
+                selectedColor.style.backgroundColor = 'black';
+            });
+
+            const dropdown = document.getElementById('colorDropdown');
+            const selectedColor = document.getElementById('selectedColor');
+            const colorList = document.getElementById('colorList');
+
+            dropdown.addEventListener('click', () => {
+                dropdown.classList.toggle('open');
+            });
+
+            colorList.addEventListener('click', (e) => {
+                if (e.target.matches('li[data-color]')) {
+                    const color = e.target.getAttribute('data-color');
+                    selectedColor.style.backgroundColor = color;
+                    dropdown.classList.remove('open');
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                }
+            });
+        </script>
+    </body>
+</html>
