@@ -21,7 +21,7 @@ public class Ex04배열실습_키큰사람 {
 			if (height < array[i]) {
 				count++;							//count = 머쓱이보다 큰 사람 수
 			}
-			
+
 		}
 		System.out.println("머쓱이보다 키가 큰 사람은 "+count+"명 입니다.");
 
