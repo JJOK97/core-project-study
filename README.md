@@ -9,7 +9,6 @@
  옥진석 | [GitHub 링크](https://github.com/JJOK97) |
  김호성 | [GitHub 링크] |
  이수현 | [GitHub 링크] |
- 이주연 | [GitHub 링크]|
  최은혜 | [GitHub 링크](https://github.com/Eunhye1109)
  
 <br>
