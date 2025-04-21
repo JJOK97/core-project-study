@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 박스오피스</title>
+</head>
+
+<body>
+
+    <button id="btn">요청</button>
+    <div id="area"></div>
+
+    <script src="./jquery-3.7.1.min.js"></script>
+
+    <script>
+        let btn = document.getElementById("btn")
+        let area = document.getElementById("area")
+
+        let MovieUrl = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=06ba645b86594a7c80cc349e4a910bdd&targetDt=20120101"
+
+        // 1. render 함수 먼저 정의
+        const render = function (ml) {
+
+    
+            let resultHTML = `
+                <table border="1px solid black">
+                    <tr> 
+                        <td>순위</td>
+                        <td>영화명</td>
+                        <td>개봉일</td>
+                        <td>전일대비 매출 증감분</td>
+                        <td>전일대비 매출 증감 비율</td>
+                        <td>누적 매출액</td>
+                        <td>누적 관객 수</td>
+                        <td>해당일자 스크린 수</td>
+                        <td>상영횟수</td>
+
+                    </tr>`;
+
+            for (let i = 0; i < ml.length; i++) {
+                resultHTML += `  
+                    <tr> 
+                        <td>${ml[i].rank}</td>
+                        <td>${ml[i].movieNm}</td>
+                        <td>${ml[i].openDt}</td>
+                        <td>${ml[i].salesInten}</td>
+                        <td>${ml[i].salesChange}</td>
+                        <td>${ml[i].salesAcc}</td>
+                        <td>${ml[i].audiAcc}</td>
+                        <td>${ml[i].scrnCnt}</td>
+                        <td>${ml[i].showCnt}</td>
+
+
+                    </tr>`;
+            }
+
+            resultHTML += `</table>`;
+            area.innerHTML = resultHTML;
+    
+        }
+        // 실습 2. 요청 함수들 기입 (영화명(국문), 영화개봉일, 
+        // 전일대비매출증감분,전일대비매출증감비율,누적매출액,누적관객수,해당일자상영스크린수, 상영횟수)
+             const getMovie = function () {
+            $.ajax({
+                url: MovieUrl,
+                success: function (InfoResult) {
+                    let movieFullInfo = InfoResult.rank.movieNm.openDt.salesInten.audiAcc.scrnCnt.showCnt;
+                    render(movieFullInfo);
+                },
+                error: function () {
+                    console.log("요청 실패ㅠ");
+                }
+            })
+   
+
+        // 3. 버튼에 이벤트 연결
+        btn.addEventListener("click", getMovie)
+  }
+    </script>
+</body>
+
+</html>
+           
