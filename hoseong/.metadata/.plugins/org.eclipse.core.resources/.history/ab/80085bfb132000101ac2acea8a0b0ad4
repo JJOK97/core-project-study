@@ -1,0 +1,16 @@
+package Controller;
+
+public class Controller {
+	
+	public void Con_main() {
+		System.out.println("1. 2. 3. 4. 5.");
+		
+		
+		System.out.println("[1]가입하기 [2]게임시작 [3]불러오기 [4]랭킹확인 [5]종료 >> ");
+	}
+	
+	
+	
+	
+	
+}
