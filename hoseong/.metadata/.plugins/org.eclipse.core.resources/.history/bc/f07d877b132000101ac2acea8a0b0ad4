@@ -1,0 +1,13 @@
+package Controller;
+
+public class Controller {
+	
+	public void Con_main() {
+		System.out.println("1. 2. 3. 4. 5.");
+	}
+	
+	
+	
+	
+	
+}

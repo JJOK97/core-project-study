@@ -1,0 +1,17 @@
+package demo;
+
+import Controller.Controller;
+
+public class asdf {
+
+	public static void main(String[] args) {
+		
+		Controller control = new Controller();
+		
+		control.Con_main();
+		
+		
+		
+	}
+
+}
